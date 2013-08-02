@@ -1,0 +1,11 @@
+{
+  "name": "chem-tmx",
+  "version": "0.0.0",
+  "description": "parse tiled maps and load images",
+  "main": "index.js",
+  "author": "Andrew Kelley <superjoe30@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "tmx-parser": "~1.0.0"
+  }
+}
