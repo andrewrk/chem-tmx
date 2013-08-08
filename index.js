@@ -2,7 +2,6 @@ var path = require('path');
 
 exports.tmx = require('tmx-parser');
 exports.load = load;
-exports.extractImage = extractImage;
 
 function load(chem, fileName, cb) {
   var v = chem.vec2d;
@@ -52,16 +51,10 @@ function load(chem, fileName, cb) {
           tile.id % tileCount.x,
           Math.floor(tile.id / tileCount.x));
       var pos = intPos.mult(tileSize.plus(spacing)).plus(margin).plus(offset);
-      tile.image = extractImage(img, pos, tileSize);
+      tile.animation = new chem.Animation();
+      tile.animation.spritesheet = img;
+      tile.animation.anchor = v();
+      tile.animation.addFrame(pos, tileSize);
     }
   }
-}
-
-function extractImage(image, pos, size) {
-  var buffer = document.createElement('canvas');
-  buffer.width = size.x;
-  buffer.height = size.y;
-  var context = buffer.getContext('2d');
-  context.drawImage(image, pos.x, pos.y, size.x, size.y, 0, 0, size.x, size.y);
-  return buffer;
 }
