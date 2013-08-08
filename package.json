@@ -6,7 +6,7 @@
   "author": "Andrew Kelley <superjoe30@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "tmx-parser": "~1.0.2"
+    "tmx-parser": "~1.1.0"
   },
   "repository": {
     "type": "git",
