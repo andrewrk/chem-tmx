@@ -42,8 +42,9 @@ function load(chem, fileName, cb) {
     var spacing = v(tileSet.spacing || 0, tileSet.spacing || 0);
     var margin = v(tileSet.margin || 0, tileSet.margin || 0);
     var offset = v(tileSet.tileOffset);
+    var imgSize = v(img.width, img.height);
     var tileSize = v(tileSet.tileWidth, tileSet.tileHeight);
-    var tileCount = tileSize.minus(margin).div(tileSize.plus(spacing)).floor();
+    var tileCount = imgSize.minus(margin).div(tileSize.plus(spacing)).floor();
     for (var i = 0; i < tileSet.tiles.length; i += 1) {
       var tile = tileSet.tiles[i];
       // calculate x and y based on id
