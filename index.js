@@ -47,6 +47,7 @@ function load(chem, fileName, cb) {
     var tileCount = imgSize.minus(margin).div(tileSize.plus(spacing)).floor();
     for (var i = 0; i < tileSet.tiles.length; i += 1) {
       var tile = tileSet.tiles[i];
+      if (!tile) continue;
       // calculate x and y based on id
       var intPos = v(
           tile.id % tileCount.x,
